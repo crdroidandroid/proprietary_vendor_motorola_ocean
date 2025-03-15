@@ -5,7 +5,3919 @@
 soong_namespace {
 	imports: [
 		"vendor/motorola/sdm632-common",
+		"device/motorola/sdm632-common",
+		"hardware/qcom-caf/msm8996",
+		"hardware/qcom-caf/wlan",
+		"vendor/qcom/opensource/dataservices",
 	],
+}
+
+cc_prebuilt_library_shared {
+	name: "sensors.ssc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/sensors.ssc.so"],
+			shared_libs: ["libutils-v32", "libcutils", "liblog", "libhardware", "libsensor1", "libsensor_reg", "libdiag", "libpower", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/sensors.ssc.so"],
+			shared_libs: ["libutils-v32", "libcutils", "liblog", "libhardware", "libsensor1", "libsensor_reg", "libdiag", "libpower", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "audio.primary.msm8953-moto",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/hw/audio.primary.msm8953-moto.so"],
+			shared_libs: ["libaudioutils", "liblog", "libcutils", "libprocessgroup", "libtinyalsa-moto", "libtinycompress_vendor", "libaudioroute", "libmotaudioutils", "libexpat", "libhardware", "libbase", "libhidlbase", "libhwbinder", "libutils", "android.hardware.power@1.2", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	relative_install_path: "hw",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "camera.msm8953",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/hw/camera.msm8953.so"],
+			shared_libs: ["liblog", "libhardware", "libutils", "libcutils", "libsync", "libmmcamera_interface", "libmmjpeg_interface", "libui", "libcamera_metadata", "libqdMetaData", "libqservice", "libbinder", "libhal_dbg", "android.frameworks.displayservice@1.0", "android.hidl.base@1.0", "libhidlbase", "libhidltransport", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	relative_install_path: "hw",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "lib_motsensorlistener",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/lib_motsensorlistener.so"],
+			shared_libs: ["liblog", "libcutils", "libutils", "libhidlbase", "android.frameworks.sensorservice@1.0", "android.hardware.sensors@1.0", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libactuator_dw9763",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libactuator_dw9763.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libactuator_dw9767",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libactuator_dw9767.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libactuator_lc898217xh",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libactuator_lc898217xh.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libadm",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libadm.so"],
+			shared_libs: ["liblog", "libcutils", "libtinyalsa", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libcdsprpc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libcdsprpc.so"],
+			shared_libs: ["liblog", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_snapshot_downscale",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_snapshot_downscale.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_cpp_video",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_cpp_video.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_default_video",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_default_video.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_hfr_60_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_hfr_60_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_ov12a10_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_ov12a10_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_cpp_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_cpp_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_hfr_60_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_hfr_60_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k3l6_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k3l6_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_cpp_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_cpp_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k4h7_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k4h7_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_snapshot_downscale",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_snapshot_downscale.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_cpp_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_cpp_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_hfr_60_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_hfr_60_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_mot_s5k5e9_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_mot_s5k5e9_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_snapshot_downscale",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_snapshot_downscale.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_cpp_video",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_cpp_video.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_default_video",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_default_video.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_hfr_60",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_hfr_60.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_hfr_60_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_hfr_60_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_ov12a10_ocean_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_ov12a10_ocean_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_common",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_common.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_liveshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_liveshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_preview",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_preview.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_snapshot_custom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_snapshot_custom.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_cpp_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_cpp_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_hfr_120",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_hfr_120.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_hfr_120_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_hfr_120_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_postproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_postproc.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_snapshot",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_snapshot.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_video_full",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_video_full.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_zsl_preview_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_zsl_preview_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libchromatix_s5k4h7_ocean_zsl_video_3a",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libchromatix_s5k4h7_ocean_zsl_video_3a.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdepthmapwrapper",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libdepthmapwrapper.so"],
+			shared_libs: ["libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libflash_pmic",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libflash_pmic.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgralloc1",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libgralloc1.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libhardware", "libqdMetaData", "libsync", "libgrallocutils", "android.hardware.graphics.common@1.1", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhal_dbg",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libhal_dbg.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpegdhw",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libjpegdhw.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpegdmahw",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libjpegdmahw.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpegehw",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libjpegehw.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblog_vendor",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/liblog_vendor.so"],
+			shared_libs: ["libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-qcamera",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmm-qcamera.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_interface", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_c2d_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_c2d_module.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera2_pp_buf_mgr", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_cpp_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_cpp_module.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera2_pp_buf_mgr", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_frame_algorithm",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_frame_algorithm.so"],
+			shared_libs: ["libmmcamera_dbg", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_iface_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_iface_modules.so"],
+			shared_libs: ["liblog", "libcutils", "libmmcamera2_mct", "libmmcamera2_isp_modules", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_imglib_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_imglib_modules.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libmmcamera2_mct", "libmmcamera_imglib", "libmmcamera_dbg", "libadsprpc", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_is",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_is.so"],
+			shared_libs: ["libcutils", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_isp_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_isp_modules.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_mct",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_mct.so"],
+			shared_libs: ["liblog", "libcutils", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_mct_shimlayer",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_mct_shimlayer.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera2_stats_modules", "libmmcamera2_iface_modules", "libmmcamera2_isp_modules", "libmmcamera2_sensor_modules", "libmmcamera2_pproc_modules", "libmmcamera2_imglib_modules", "libmmcamera_thread_services", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_pp_buf_mgr",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_pp_buf_mgr.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_pproc_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_pproc_modules.so"],
+			shared_libs: ["liblog", "libcutils", "libmmcamera2_cpp_module", "libmmcamera2_mct", "libmmcamera2_imglib_modules", "libmmcamera_ppbase_module", "libmmcamera_eztune_module", "libmmcamera2_c2d_module", "libmmcamera_dbg", "libmmcamera_vstab_module", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_q3a_core",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_q3a_core.so"],
+			shared_libs: ["libcutils", "libmmcamera2_stats_algorithm", "libmmcamera2_stats_lib", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_sensor_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_sensor_modules.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libz", "libxml2", "libmmcamera_dbg", "liblog", "libmmcamera_pdaf", "libmmcamera_pdafcamif", "lib_motsensorlistener", "libmotimager_utils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_stats_algorithm",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_stats_algorithm.so"],
+			shared_libs: ["libcutils", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_stats_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_stats_lib.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera2_stats_modules",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera2_stats_modules.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera2_stats_lib", "libmmcamera2_stats_algorithm", "libxml2", "libutils", "libmmcamera_dbg", "libhidlbase", "libhidltransport", "android.frameworks.sensorservice@1.0", "libmmcamera2_is", "libsensor1", "libmot_lux_standardization", "libmot_afd", "libmot_lux_standardization", "libmot_afd", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_dbg",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_dbg.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_depth_map",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_depth_map.so"],
+			shared_libs: ["libdepthmapwrapper", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_eebinparse",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_eebinparse.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_eeprom_util",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_eeprom_util.so"],
+			shared_libs: ["liblog", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_eztune_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_eztune_module.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_ppbase_module", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_facedetection_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_facedetection_lib.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_faceproc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_faceproc.so"],
+			shared_libs: ["libc++", "libdl", "libc", "libm", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_faceproc2",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_faceproc2.so"],
+			shared_libs: ["libc++", "libdl", "libc", "libm", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_hdr_gb_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_hdr_gb_lib.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_imglib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_imglib.so"],
+			shared_libs: ["libutils", "libcutils", "liblog", "libmmcamera_dbg", "libadsprpc", "libfastcvopt", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_imglib_faceproc_adspstub",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_imglib_faceproc_adspstub.so"],
+			shared_libs: ["libadsprpc", "libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_interface",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_interface.so"],
+			shared_libs: ["libcutils", "liblog", "libhal_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_abf40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_abf40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_bcc40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_bcc40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_be_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_be_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_bf_stats47",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_bf_stats47.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_bg_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_bg_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_bhist_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_bhist_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_bpc40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_bpc40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_chroma_enhan40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_chroma_enhan40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_chroma_suppress40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_chroma_suppress40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_clamp_encoder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_clamp_encoder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_clamp_video40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_clamp_video40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_clamp_viewfinder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_clamp_viewfinder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_color_correct40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_color_correct40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_color_xform_encoder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_color_xform_encoder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_color_xform_viewfinder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_cs_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_cs_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_demosaic40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_demosaic40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_demux40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_demux40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_fovcrop_encoder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_fovcrop_encoder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_fovcrop_viewfinder40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_fovcrop_viewfinder40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_gamma40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_gamma40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_ihist_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_ihist_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_linearization40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_linearization40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_ltm44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_ltm44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_luma_adaptation40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_luma_adaptation40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_mce40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_mce40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_mesh_rolloff40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_mesh_rolloff40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_rs_stats44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_rs_stats44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_scaler_encoder44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_scaler_encoder44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_scaler_viewfinder44",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_scaler_viewfinder44.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_sce40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_sce40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_sub_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_sub_module.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_template",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_template.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_isp_wb40",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_isp_wb40.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_isp_sub_module", "libmmcamera_dbg", "libmmcamera2_isp_modules", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_dw9763_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_dw9763_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_dw9767_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_dw9767_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_gt24p64b_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_gt24p64b_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_ov12a10",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_ov12a10.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_ov12a10_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_ov12a10_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_s5k3l6",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_s5k3l6.so"],
+			shared_libs: ["libcutils", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_s5k5e9",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_s5k5e9.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_mot_s5k5e9_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_mot_s5k5e9_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_paaf_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_paaf_lib.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libmmcamera2_frame_algorithm", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_pdaf",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_pdaf.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_pdafcamif",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_pdafcamif.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_ppbase_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_ppbase_module.so"],
+			shared_libs: ["libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_ppeiscore",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_ppeiscore.so"],
+			shared_libs: ["libcutils", "liblog", "libGLESv2_adreno", "libEGL", "libGLESv2", "libhardware", "libqdMetaData", "libutils", "libmmcamera_dbg", "libmmcamera_imglib", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_quadracfa",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_quadracfa.so"],
+			shared_libs: ["libcutils", "liblog", "libremosaic_daemon", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_s5k4h7",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_s5k4h7.so"],
+			shared_libs: ["libcutils", "libmmcamera_dbg", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_s5k4h7_eeprom",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_s5k4h7_eeprom.so"],
+			shared_libs: ["libcutils", "libutils", "libmmcamera_eeprom_util", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_sat_test_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_sat_test_lib.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libmmcamera_imglib", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_stillmore_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_stillmore_lib.so"],
+			shared_libs: ["libseemore", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_sw2d_lib",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_sw2d_lib.so"],
+			shared_libs: ["libmmcamera_imglib", "libmmcamera_dbg", "libcutils", "liblog", "libfastcvopt", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_thread_services",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_thread_services.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_tintless_algo",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_tintless_algo.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_tintless_bg_pca_algo",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_tuning",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_tuning.so"],
+			shared_libs: ["libmmcamera_tuning_lookup", "libmmcamera2_mct", "libmmcamera2_stats_modules", "libmmcamera2_iface_modules", "libmmcamera2_isp_modules", "libmmcamera2_sensor_modules", "libmmcamera2_pproc_modules", "libmmcamera2_imglib_modules", "libmmcamera_eztune_module", "libmm-qcamera", "liblog", "libcutils", "libfastcvopt", "libmmcamera_dbg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_tuning_lookup",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_tuning_lookup.so"],
+			shared_libs: ["liblog", "libcutils", "libfastcvopt", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_vstab_module",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmcamera_vstab_module.so"],
+			shared_libs: ["libutils", "libcutils", "libmmcamera2_mct", "libmmcamera_dbg", "libgui_vendor", "libEGL", "libGLESv2", "libmot_gpu_mapper", "lib_motsensorlistener", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmjpeg",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmjpeg.so"],
+			shared_libs: ["libcutils", "libfastcvopt", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmjpeg_interface",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmjpeg_interface.so"],
+			shared_libs: ["libcutils", "liblog", "libqomx_core", "libmmcamera_interface", "libmmlib2d_interface", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmlib2d_interface",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmlib2d_interface.so"],
+			shared_libs: ["libcutils", "liblog", "libmmcamera_interface", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmqjpeg_codec",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmqjpeg_codec.so"],
+			shared_libs: ["libcutils", "liblog", "libmmjpeg", "libmmqjpegdma", "libfastcvopt", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmqjpegdma",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmqjpegdma.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmot_afd",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmot_afd.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmot_gpu_mapper",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmot_gpu_mapper.so"],
+			shared_libs: ["libgui_shim_vendor", "liblog", "libcutils", "libutils", "libui", "libgui_vendor", "libEGL", "libGLESv2", "libqdMetaData", "libhardware", "libgralloc1", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmot_lux_standardization",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmot_lux_standardization.so"],
+			shared_libs: ["libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmotaudioutils",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmotaudioutils.so"],
+			shared_libs: ["liblog", "libutils", "libgui_vendor", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmotimager_utils",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmotimager_utils.so"],
+			shared_libs: ["libcrypto", "liblog", "libdl", "libc++", "libc", "libm", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_core",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqomx_core.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_jpegdec",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqomx_jpegdec.so"],
+			shared_libs: ["libcutils", "liblog", "libmmqjpeg_codec", "libmmjpeg", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_jpegenc",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqomx_jpegenc.so"],
+			shared_libs: ["libcutils", "liblog", "libmmjpeg", "libmmqjpeg_codec", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_jpegenc_pipe",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqomx_jpegenc_pipe.so"],
+			shared_libs: ["libcutils", "liblog", "libmmqjpeg_codec", "libmmjpeg", "libmmqjpegdma", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libremosaic_daemon",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libremosaic_daemon.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libseemore",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libseemore.so"],
+			shared_libs: ["libdl", "libm", "liblog", "libz", "libc", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsensorndkbridge",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libsensorndkbridge.so"],
+			shared_libs: ["libbase", "libhidlbase", "libhidltransport", "libutils", "android.frameworks.sensorservice@1.0", "android.hardware.sensors@1.0", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libtinyalsa-moto",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libtinyalsa-moto.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libtinycompress_vendor",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libtinycompress_vendor.so"],
+			shared_libs: ["libcutils", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmieffectswrapper",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/soundfx/libmmieffectswrapper.so"],
+			shared_libs: ["libcutils", "liblog", "libutils", "libtinyalsa-moto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	relative_install_path: "soundfx",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libspeakerbundle",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/soundfx/libspeakerbundle.so"],
+			shared_libs: ["liblog", "libtinyalsa-moto", "libutils-v32", "libcutils", "libsensorndkbridge", "libaudioroute", "libgui_vendor", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	relative_install_path: "soundfx",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "com.fingerprints.extension@1.0",
+	owner: "motorola",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/com.fingerprints.extension@1.0.so"],
+			shared_libs: ["libhidlbase", "libhidltransport", "libhwbinder", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
 }
 
 android_app_import {
@@ -18,5 +3930,40 @@ android_app_import {
 	},
 	privileged: true,
 	product_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "charge_only_mode",
+	owner: "motorola",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/charge_only_mode"],
+			shared_libs: ["libmemset_shim", "libhardware_legacy", "libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "android.hardware.biometrics.fingerprint@2.1-fpcservice",
+	owner: "motorola",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice"],
+			shared_libs: ["liblog", "libhidlbase", "libbinder", "libhidltransport", "libutils", "android.hardware.biometrics.fingerprint@2.1", "com.fingerprints.extension@1.0", "libQSEEComAPI", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	relative_install_path: "hw",
+	soc_specific: true,
 }
 
