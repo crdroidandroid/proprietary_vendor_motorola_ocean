@@ -5905,7 +5905,6 @@ cc_prebuilt_library_shared {
                 "libEGL",
                 "libGLESv2",
                 "libqdMetaData",
-                "libc2dcolorconvert",
                 "libhardware",
                 "libgralloc1",
                 "libc++",
