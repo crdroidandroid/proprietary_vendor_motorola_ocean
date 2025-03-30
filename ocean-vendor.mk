@@ -274,6 +274,5 @@ PRODUCT_PACKAGES += \
     libmmieffectswrapper \
     libspeakerbundle \
     com.fingerprints.extension@1.0 \
-    MotCamera2 \
     charge_only_mode \
     android.hardware.biometrics.fingerprint@2.1-fpcservice
